@@ -1,4 +1,8 @@
-# Webpack template
+# Homepage template
+
+This is the webpage template that will be built as part of the assignment.
+
+## Webpack template
 
 A generic webpack template for html, css and javascript. This is the template that I will be using for my personal projects and will update it as needed.
 

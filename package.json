@@ -1,7 +1,7 @@
 {
-  "name": "webpack-template",
+  "name": "Homepage template",
   "version": "1.0.0",
-  "description": "generic webpack template for html, css and javascript",
+  "description": "A template for homepage as part of assignment",
   "main": "index.js",
   "scripts": {
     "formatTest": "npm run formatCheck && eslint ./src/",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ignasc/webpack-template.git"
+    "url": "git+https://github.com/ignasc/odinProject-Homepage.git"
   },
   "keywords": [
     "webpack"
@@ -23,9 +23,9 @@
   "author": "Ignas C",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ignasc/webpack-template/issues"
+    "url": "https://github.com/ignasc/odinProject-Homepage/issues"
   },
-  "homepage": "https://github.com/ignasc/webpack-template#readme",
+  "homepage": "https://github.com/ignasc/odinProject-Homepage#readme",
   "devDependencies": {
     "@eslint/css": "^0.9.0",
     "@eslint/js": "^9.30.1",
