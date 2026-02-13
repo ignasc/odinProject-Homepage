@@ -1,3 +1,30 @@
 body {
     font-family: "Roboto", sans-serif;
 }
+
+.wrapper {
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr min(42rem, 100%) 1fr;
+}
+
+header {
+    border: 1px solid black;
+    grid-column: 2 / -2;
+}
+
+nav {
+    border: 1px solid black;
+    grid-column: 2 / -2;
+}
+
+main {
+    border: 1px solid black;
+    grid-column: 2 / -2;
+    max-width: 64rem;
+}
+
+footer {
+    border: 1px solid black;
+    grid-column: 2 / -2;
+}
