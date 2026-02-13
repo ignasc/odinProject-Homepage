@@ -22,9 +22,20 @@ main {
     border: 1px solid black;
     grid-column: 2 / -2;
     max-width: 64rem;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 footer {
     border: 1px solid black;
     grid-column: 2 / -2;
+}
+
+.card {
+    border: 1px solid green;
+    flex-basis: 100px;
 }
