@@ -28,3 +28,7 @@ footer {
     border: 1px solid black;
     grid-column: 2 / -2;
 }
+
+.full-bleed {
+    grid-column: 1 / -1;
+}
