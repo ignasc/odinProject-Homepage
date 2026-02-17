@@ -11,16 +11,26 @@ cardContainer.classList.add("card");
 for (let i = 0; i < cards.length; i++) {
     const cardData = cards[i];
     const cardElement = cardContainer.cloneNode();
-    const cardImage = document.createElement("img");
-    const cardHeader = document.createElement("h1");
+    const cardImageThumbnail = document.createElement("img");
+    const cardImageSourceCode = document.createElement("img");
+    const cardImageLivePreview = document.createElement("img");
+    const cardTitle = document.createElement("h1");
     const cardDescription = document.createElement("p");
 
-    cardImage.src = cardData.imgsrc;
-    cardHeader.innerHTML = cardData.title;
+    cardImageThumbnail.src = cardData.imgsrc;
+    cardImageSourceCode.src = cardData.imgSourceCode;
+    cardImageLivePreview.src = cardData.imgLivePreview;
+    cardTitle.innerHTML = cardData.title;
     cardDescription.innerHTML = cardData.desc;
 
-    cardElement.appendChild(cardImage);
-    cardElement.appendChild(cardHeader);
+    cardImageThumbnail.classList.add("card-thumbnail");
+    cardImageSourceCode.classList.add("card-icon");
+    cardImageLivePreview.classList.add("card-icon");
+
+    cardElement.appendChild(cardImageThumbnail);
+    cardElement.appendChild(cardTitle);
+    cardElement.appendChild(cardImageSourceCode);
+    cardElement.appendChild(cardImageLivePreview);
     cardElement.appendChild(cardDescription);
 
     mainContent.appendChild(cardElement);

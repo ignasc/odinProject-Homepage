@@ -41,6 +41,18 @@ footer {
 }
 
 .card > img {
-    width: 100%;
     object-fit: contain;
+}
+
+.card-thumbnail {
+    width: 100%;
+}
+
+.card-icon {
+    border: 1px solid red;
+    max-width: 1.5rem;
+}
+
+h1 {
+    font-size: 1.1rem;
 }
