@@ -37,5 +37,10 @@ footer {
 
 .card {
     border: 1px solid green;
-    flex-basis: 100px;
+    flex-basis: 150px;
+}
+
+.card > img {
+    width: 100%;
+    object-fit: contain;
 }
