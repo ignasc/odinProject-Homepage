@@ -22,6 +22,12 @@ main {
     border: 1px solid black;
     grid-column: 2 / -2;
     max-width: 64rem;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 footer {
@@ -31,4 +37,52 @@ footer {
 
 .full-bleed {
     grid-column: 1 / -1;
+}
+
+.card {
+    border: 1px solid green;
+    flex-basis: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.card > img {
+    object-fit: contain;
+}
+
+.card-thumbnail {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.card > h1 {
+    grid-column: 1 / 2;
+    justify-self: start;
+    align-self: center;
+    padding: 0.5rem;
+}
+
+.card-container-icons {
+    grid-column: -1 / -2;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px;
+}
+
+.card-icon {
+    border: 1px solid red;
+    max-width: 1.5rem;
+}
+
+.card > p {
+    grid-column: 1 / -1;
+    align-self: start;
+    padding: 0.5rem;
+}
+
+h1 {
+    font-size: 1.1rem;
 }
