@@ -17,6 +17,9 @@ for (let i = 0; i < cards.length; i++) {
     const cardTitle = document.createElement("h1");
     const cardDescription = document.createElement("p");
 
+    const linkContainer = document.createElement("div");
+    linkContainer.classList.add("card-container-icons");
+
     cardImageThumbnail.src = cardData.imgsrc;
     cardImageSourceCode.src = cardData.imgSourceCode;
     cardImageLivePreview.src = cardData.imgLivePreview;
@@ -29,8 +32,9 @@ for (let i = 0; i < cards.length; i++) {
 
     cardElement.appendChild(cardImageThumbnail);
     cardElement.appendChild(cardTitle);
-    cardElement.appendChild(cardImageSourceCode);
-    cardElement.appendChild(cardImageLivePreview);
+    linkContainer.appendChild(cardImageSourceCode);
+    linkContainer.appendChild(cardImageLivePreview);
+    cardElement.appendChild(linkContainer);
     cardElement.appendChild(cardDescription);
 
     mainContent.appendChild(cardElement);
