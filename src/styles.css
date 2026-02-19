@@ -11,6 +11,28 @@ body {
 header {
     border: 1px solid black;
     grid-column: 2 / -2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-image {
+}
+
+.header-title {
+}
+
+.header-paragraph {
+}
+
+.header-links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.header-link-icon {
+    max-width: 1.5rem;
 }
 
 nav {
