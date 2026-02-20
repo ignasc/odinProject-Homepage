@@ -14,7 +14,7 @@ const headerLinksContainer = document.createElement("div");
 const headerLinkIcon = document.createElement("img");
 
 headerImage.classList.add("header-image");
-// headerAboutContainer.classList.add();
+headerAboutContainer.classList.add("header-about-container");
 headerAboutTitle.classList.add("header-title");
 headerAboutParagraph.classList.add("header-paragraph");
 headerLinksContainer.classList.add("header-links-container");
