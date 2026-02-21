@@ -25,6 +25,7 @@ header {
     flex-grow: 0;
     flex-basis: 15rem;
 }
+
 .header-about-container {
     flex-basis: 15rem;
     padding: 0.5rem;
@@ -53,7 +54,7 @@ header {
     max-width: 1.5rem;
 }
 
-nav {
+footer {
     border: 1px solid black;
     grid-column: 2 / -2;
 }
@@ -125,4 +126,44 @@ footer {
 
 h1 {
     font-size: 1.1rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-detail-wrapper {
+}
+
+.footer-detail-wrapper > * {
+    padding: 0.5rem;
+}
+
+.footer-item {
+}
+
+.footer-phone-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.footer-email-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.footer-icon {
+    max-width: 1.5rem;
+}
+
+.footer-links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
 }

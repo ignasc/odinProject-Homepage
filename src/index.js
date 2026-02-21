@@ -72,3 +72,55 @@ for (let i = 0; i < cards.length; i++) {
 
     mainContent.appendChild(cardElement);
 }
+
+// Generate footer
+
+const footer = document.getElementsByTagName("footer")[0];
+footer.innerHTML = "";
+const footerDetailWrapper = document.createElement("div");
+
+const footerTitle = document.createElement("h1");
+const footerParagraph = document.createElement("p");
+const footerPhoneContainer = document.createElement("div");
+const footerTelephoneImg = document.createElement("img");
+const footerTelephoneText = document.createElement("p");
+const footerEmailContainer = document.createElement("div");
+const footerEmailImg = document.createElement("img");
+const footerEmailText = document.createElement("p");
+const footerMainImg = document.createElement("img");
+const footerLinksContainer = headerLinksContainer.cloneNode(true);
+footerLinksContainer.setAttribute("class", ""); // remove classes that were set while setting up header links
+footerLinksContainer.classList.add("footer-links-container");
+
+footer.classList.add("footer-container");
+footerDetailWrapper.classList.add("footer-detail-wrapper");
+footerTitle.innerHTML = "Contacts";
+footerDetailWrapper.appendChild(footerTitle);
+
+footerParagraph.innerHTML =
+    "My contact details are below." +
+    "<br />" +
+    "<br />" +
+    "Feel free to get in touch.";
+footerDetailWrapper.appendChild(footerParagraph);
+
+footerTelephoneText.innerHTML = "+1234567890";
+footerTelephoneImg.src = img_noimage;
+footerTelephoneImg.classList.add("footer-icon");
+footerPhoneContainer.classList.add("footer-phone-container");
+footerPhoneContainer.appendChild(footerTelephoneImg);
+footerPhoneContainer.appendChild(footerTelephoneText);
+footerDetailWrapper.appendChild(footerPhoneContainer);
+
+footerEmailText.innerHTML = "email@email.com";
+footerEmailImg.src = img_noimage;
+footerEmailImg.classList.add("footer-icon");
+footerEmailContainer.classList.add("footer-email-container");
+footerEmailContainer.appendChild(footerEmailImg);
+footerEmailContainer.appendChild(footerEmailText);
+footerDetailWrapper.appendChild(footerEmailContainer);
+footerDetailWrapper.appendChild(footerLinksContainer);
+
+footer.appendChild(footerDetailWrapper);
+footerMainImg.src = img_noimage;
+footer.appendChild(footerMainImg);
