@@ -1,3 +1,7 @@
+:root {
+    --card-width: 200px;
+}
+
 body {
     font-family: "Roboto", sans-serif;
 }
@@ -65,9 +69,11 @@ main {
     max-width: 64rem;
     padding: 5px;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: var(--card-width);
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+
     gap: 1rem;
 }
 
@@ -82,7 +88,7 @@ footer {
 
 .card {
     border: 1px solid green;
-    flex-basis: 150px;
+    flex-basis: var(--card-width);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
