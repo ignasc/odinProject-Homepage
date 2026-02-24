@@ -1,5 +1,8 @@
 :root {
+    --wrapper-width: 42rem;
     --card-width: 200px;
+
+    --background-color: lightgrey;
 }
 
 body {
@@ -9,7 +12,18 @@ body {
 .wrapper {
     border: 1px solid red;
     display: grid;
-    grid-template-columns: 1fr min(42rem, 100%) 1fr;
+    grid-template-columns: 1fr min(var(--wrapper-width), 100%) 1fr;
+    /* overflow: hidden; */
+}
+
+.header-background {
+    position: absolute;
+    background-color: var(--background-color);
+    flex-basis: 100%;
+    width: var(--wrapper-width);
+    height: 100%;
+    transform: skewY(-5deg) translateY(-60%) scaleY(2);
+    z-index: -1;
 }
 
 header {
@@ -135,6 +149,7 @@ h1 {
 }
 
 .footer-container {
+    background-color: var(--background-color);
     display: flex;
     flex-direction: row;
     justify-content: space-around;

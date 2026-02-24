@@ -3,6 +3,10 @@ import "./resetcss.css";
 import "./styles.css";
 import img_noimage from "./img/no-image-icon-23494.png";
 
+// Generate header background
+const headerBackground = document.createElement("div");
+headerBackground.setAttribute("class", "header-background");
+
 // Generate header
 const header = document.getElementsByTagName("header")[0];
 header.innerHTML = "";
@@ -26,6 +30,7 @@ headerAboutParagraph.innerHTML =
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ipsa culpa adipisci sequi esse ducimus nostrum deleniti voluptates corporis placeat!";
 headerLinkIcon.src = img_noimage;
 
+header.appendChild(headerBackground);
 header.appendChild(headerImage);
 headerAboutContainer.appendChild(headerAboutTitle);
 headerAboutContainer.appendChild(headerAboutParagraph);
