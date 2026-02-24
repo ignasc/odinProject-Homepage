@@ -3,6 +3,7 @@
     --card-width: 200px;
 
     --background-color: lightgrey;
+    --header-image-max-height: 15rem;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
     border: 1px solid red;
     display: grid;
     grid-template-columns: 1fr min(var(--wrapper-width), 100%) 1fr;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .header-background {
@@ -21,8 +22,9 @@ body {
     background-color: var(--background-color);
     flex-basis: 100%;
     width: var(--wrapper-width);
-    height: 100%;
-    transform: skewY(-5deg) translateY(-60%) scaleY(2);
+    height: var(--header-image-max-height);
+    top: 0;
+    transform: skewY(-5deg) translateY(-50%) scaleY(2);
     z-index: -1;
 }
 
@@ -41,7 +43,7 @@ header {
 .header-image {
     flex-shrink: 1;
     flex-grow: 0;
-    flex-basis: 15rem;
+    flex-basis: var(--header-image-max-height);
 }
 
 .header-about-container {
