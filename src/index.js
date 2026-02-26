@@ -2,6 +2,12 @@ import cards from "./DB_content";
 import "./resetcss.css";
 import "./styles.css";
 import img_noimage from "./img/no-image-icon-23494.png";
+import icon_github from "./img/icon_github.svg";
+import icon_linkedin from "./img/icon_linkedin.svg";
+import icon_email from "./img/icon_envelope.svg";
+import icon_phone from "./img/icon_phone-flip.svg";
+import icon_share from "./img/icon_share-square-thin.svg";
+import icon_liveWeb from "./img/icon-site-browser.svg";
 
 // Generate header background
 const headerBackground = document.createElement("div");
@@ -24,6 +30,11 @@ headerAboutParagraph.classList.add("header-paragraph");
 headerLinksContainer.classList.add("header-links-container");
 headerLinkIcon.classList.add("header-link-icon");
 
+const iconGithub = headerLinkIcon.cloneNode();
+iconGithub.src = icon_github;
+const iconLinkedin = headerLinkIcon.cloneNode();
+iconLinkedin.src = icon_linkedin;
+
 headerImage.src = img_noimage;
 headerAboutTitle.innerHTML = "Title about me";
 headerAboutParagraph.innerHTML =
@@ -34,9 +45,9 @@ header.appendChild(headerBackground);
 header.appendChild(headerImage);
 headerAboutContainer.appendChild(headerAboutTitle);
 headerAboutContainer.appendChild(headerAboutParagraph);
-headerLinksContainer.appendChild(headerLinkIcon.cloneNode());
-headerLinksContainer.appendChild(headerLinkIcon.cloneNode());
-headerLinksContainer.appendChild(headerLinkIcon.cloneNode());
+headerLinksContainer.appendChild(iconGithub);
+headerLinksContainer.appendChild(iconLinkedin);
+// headerLinksContainer.appendChild(headerLinkIcon.cloneNode());
 headerAboutContainer.appendChild(headerLinksContainer);
 header.appendChild(headerAboutContainer);
 
@@ -59,8 +70,8 @@ for (let i = 0; i < cards.length; i++) {
     linkContainer.classList.add("card-container-icons");
 
     cardImageThumbnail.src = cardData.imgsrc;
-    cardImageSourceCode.src = cardData.imgSourceCode;
-    cardImageLivePreview.src = cardData.imgLivePreview;
+    cardImageSourceCode.src = icon_github;
+    cardImageLivePreview.src = icon_liveWeb;
     cardTitle.innerHTML = cardData.title;
     cardDescription.innerHTML = cardData.desc;
 
@@ -110,7 +121,7 @@ footerParagraph.innerHTML =
 footerDetailWrapper.appendChild(footerParagraph);
 
 footerTelephoneText.innerHTML = "+1234567890";
-footerTelephoneImg.src = img_noimage;
+footerTelephoneImg.src = icon_phone;
 footerTelephoneImg.classList.add("footer-icon");
 footerPhoneContainer.classList.add("footer-phone-container");
 footerPhoneContainer.appendChild(footerTelephoneImg);
@@ -118,7 +129,7 @@ footerPhoneContainer.appendChild(footerTelephoneText);
 footerDetailWrapper.appendChild(footerPhoneContainer);
 
 footerEmailText.innerHTML = "email@email.com";
-footerEmailImg.src = img_noimage;
+footerEmailImg.src = icon_email;
 footerEmailImg.classList.add("footer-icon");
 footerEmailContainer.classList.add("footer-email-container");
 footerEmailContainer.appendChild(footerEmailImg);
@@ -129,3 +140,12 @@ footerDetailWrapper.appendChild(footerLinksContainer);
 footer.appendChild(footerDetailWrapper);
 footerMainImg.src = img_noimage;
 footer.appendChild(footerMainImg);
+
+// Generate credits
+const credits = document.getElementById("credits");
+const linkToIcons = document.createElement("a");
+credits.innerHTML = "";
+linkToIcons.href = "https://www.flaticon.com";
+linkToIcons.innerHTML = "Icons from Flaticon";
+// footerCredits.innerHTML = "https://www.flaticon.com";
+credits.appendChild(linkToIcons);

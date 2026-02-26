@@ -72,6 +72,15 @@ header {
 
 .header-link-icon {
     max-width: 1.5rem;
+    transition:
+        transform 0.1s,
+        filter 0.2s;
+}
+
+.header-link-icon:hover {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(45%) saturate(634%)
+        hue-rotate(100deg) brightness(94%) contrast(92%);
+    transform: scale(1.1);
 }
 
 footer {
@@ -104,6 +113,7 @@ footer {
 
 .card {
     border: 1px solid green;
+    padding: 0.5rem;
     flex-basis: var(--card-width);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -131,13 +141,23 @@ footer {
     justify-self: end;
     display: flex;
     align-items: center;
-    gap: 2px;
+    justify-content: end;
+    gap: 5px;
     padding: 2px;
 }
 
 .card-icon {
     border: 1px solid red;
     max-width: 1.5rem;
+    transition:
+        transform 0.1s,
+        filter 0.2s;
+}
+
+.card-icon:hover {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(45%) saturate(634%)
+        hue-rotate(100deg) brightness(94%) contrast(92%);
+    transform: scale(1.1);
 }
 
 .card > p {
@@ -189,4 +209,16 @@ h1 {
     flex-direction: row;
     justify-content: center;
     gap: 0.5rem;
+}
+
+#credits {
+    grid-column: 2 / -2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--background-color);
+}
+
+#credits > a {
+    text-align: center;
 }
