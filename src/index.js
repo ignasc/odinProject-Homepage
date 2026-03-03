@@ -9,6 +9,17 @@ import icon_phone from "./img/icon_phone-flip.svg";
 import icon_share from "./img/icon_share-square-thin.svg";
 import icon_liveWeb from "./img/icon-site-browser.svg";
 
+// Set light/dark theme
+const bodyElem = document.getElementsByTagName("body")[0];
+const btnThemeToggle = document.createElement("button");
+btnThemeToggle.innerHTML = "Theme";
+btnThemeToggle.classList.add("btn-theme-toggle");
+btnThemeToggle.addEventListener("click", () => {
+    bodyElem.classList.toggle("light");
+});
+
+bodyElem.appendChild(btnThemeToggle);
+
 // Generate header background
 const headerBackground = document.createElement("div");
 headerBackground.setAttribute("class", "header-background");
