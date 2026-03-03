@@ -4,6 +4,73 @@
 
     --background-color: lightgrey;
     --header-image-max-height: 15rem;
+
+    /*  https://www.iamsajid.com/ui-colors/ */
+    /* Neutral/vivid value 0.05 */
+    /* Warmer/cooler value 268 */
+    /* hsl (fallback color) */
+    --bg-dark: hsl(231 74% 2%);
+    --bg: hsl(225 52% 6%);
+    --bg-light: hsl(223 32% 10%);
+    --text: hsl(223 100% 99%);
+    --text-muted: hsl(223 34% 73%);
+    --highlight: hsl(223 19% 42%);
+    --border: hsl(223 25% 31%);
+    --border-muted: hsl(224 34% 21%);
+    --primary: hsl(223 77% 77%);
+    --secondary: hsl(43 50% 59%);
+    --danger: hsl(9 26% 64%);
+    --warning: hsl(52 19% 57%);
+    --success: hsl(146 17% 59%);
+    --info: hsl(217 28% 65%);
+    /* oklch */
+    --bg-dark: oklch(0.1 0.025 268);
+    --bg: oklch(0.15 0.025 268);
+    --bg-light: oklch(0.2 0.025 268);
+    --text: oklch(0.96 0.05 268);
+    --text-muted: oklch(0.76 0.05 268);
+    --highlight: oklch(0.5 0.05 268);
+    --border: oklch(0.4 0.05 268);
+    --border-muted: oklch(0.3 0.05 268);
+    --primary: oklch(0.76 0.1 268);
+    --secondary: oklch(0.76 0.1 88);
+    --danger: oklch(0.7 0.05 30);
+    --warning: oklch(0.7 0.05 100);
+    --success: oklch(0.7 0.05 160);
+    --info: oklch(0.7 0.05 260);
+}
+
+body.light {
+    /* hsl (fallback color) */
+    --bg-dark: hsl(223 58% 92%);
+    --bg: hsl(223 100% 97%);
+    --bg-light: hsl(223 100% 100%);
+    --text: hsl(230 78% 7%);
+    --text-muted: hsl(223 25% 31%);
+    --highlight: hsl(223 100% 100%);
+    --border: hsl(223 18% 54%);
+    --border-muted: hsl(223 26% 66%);
+    --primary: hsl(225 44% 34%);
+    --secondary: hsl(46 100% 14%);
+    --danger: hsl(9 21% 41%);
+    --warning: hsl(52 23% 34%);
+    --success: hsl(147 19% 36%);
+    --info: hsl(217 22% 41%);
+    /* oklch */
+    --bg-dark: oklch(0.92 0.025 268);
+    --bg: oklch(0.96 0.025 268);
+    --bg-light: oklch(1 0.025 268);
+    --text: oklch(0.15 0.05 268);
+    --text-muted: oklch(0.4 0.05 268);
+    --highlight: oklch(1 0.05 268);
+    --border: oklch(0.6 0.05 268);
+    --border-muted: oklch(0.7 0.05 268);
+    --primary: oklch(0.4 0.1 268);
+    --secondary: oklch(0.4 0.1 88);
+    --danger: oklch(0.5 0.05 30);
+    --warning: oklch(0.5 0.05 100);
+    --success: oklch(0.5 0.05 160);
+    --info: oklch(0.5 0.05 260);
 }
 
 body {
