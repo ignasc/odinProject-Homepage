@@ -1,21 +1,69 @@
 import cards from "./DB_content";
 import "./resetcss.css";
+import "./animations.css";
+import "./darkAndLightThemes.css";
 import "./styles.css";
 import img_noimage from "./img/no-image-icon-23494.png";
 import icon_github from "./img/icon_github.svg";
 import icon_linkedin from "./img/icon_linkedin.svg";
 import icon_email from "./img/icon_envelope.svg";
 import icon_phone from "./img/icon_phone-flip.svg";
-import icon_share from "./img/icon_share-square-thin.svg";
+// import icon_share from "./img/icon_share-square-thin.svg";
 import icon_liveWeb from "./img/icon-site-browser.svg";
 
-// Set light/dark theme
+const svg_theme = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+
+var svg_path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+svg_theme.setAttribute("aria-hidden", "true");
+svg_theme.setAttribute("viewBox", "0 0 200 200");
+svg_theme.setAttribute("width", "200");
+svg_theme.setAttribute("height", "200");
+
+const svg_circle_lightBulb = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "circle"
+);
+svg_circle_lightBulb.setAttribute("cx", 100);
+svg_circle_lightBulb.setAttribute("cy", 70);
+svg_circle_lightBulb.setAttribute("r", 50);
+svg_circle_lightBulb.setAttribute("fill", "none");
+svg_circle_lightBulb.setAttribute("stroke", "black");
+svg_circle_lightBulb.setAttribute("stroke-width", "20");
+
+const svg_path_lightOn =
+    "M7 130 L41 108 M75 135 L60 172 M125 135 L140 172 M193 130 L159 108";
+const svg_path_lightOff =
+    "M-178 249 L-76 183 M25 264 L-20 375 M174 264 L220 375 M378 249 L276 184";
+
+svg_path.setAttribute("d", svg_path_lightOn);
+svg_path.setAttribute("fill", "none");
+svg_path.setAttribute("stroke", "black");
+svg_path.setAttribute("stroke-width", "20");
+
+svg_theme.appendChild(svg_circle_lightBulb);
+svg_theme.appendChild(svg_path);
+
 const bodyElem = document.getElementsByTagName("body")[0];
+
+// Set light/dark theme
 const btnThemeToggle = document.createElement("button");
-btnThemeToggle.innerHTML = "Theme";
+
 btnThemeToggle.classList.add("btn-theme-toggle");
+
+svg_theme.setAttribute("class", "btn-theme-toggle-svg");
+btnThemeToggle.appendChild(svg_theme);
+
+btnThemeToggle.setAttribute("title", "Toggle light/dark modes");
+
 btnThemeToggle.addEventListener("click", () => {
-    bodyElem.classList.toggle("light");
+    if (bodyElem.classList.contains("light")) {
+        svg_path.setAttribute("d", svg_path_lightOff);
+        bodyElem.setAttribute("class", "dark");
+    } else {
+        svg_path.setAttribute("d", svg_path_lightOn);
+        bodyElem.setAttribute("class", "light");
+    }
 });
 
 bodyElem.appendChild(btnThemeToggle);
@@ -43,8 +91,10 @@ headerLinkIcon.classList.add("header-link-icon");
 
 const iconGithub = headerLinkIcon.cloneNode();
 iconGithub.src = icon_github;
+iconGithub.setAttribute("title", "My GitHub profile");
 const iconLinkedin = headerLinkIcon.cloneNode();
 iconLinkedin.src = icon_linkedin;
+iconLinkedin.setAttribute("title", "My Linkedin profile");
 
 headerImage.src = img_noimage;
 headerAboutTitle.innerHTML = "Title about me";
@@ -74,7 +124,7 @@ for (let i = 0; i < cards.length; i++) {
     const cardImageThumbnail = document.createElement("img");
     const cardImageSourceCode = document.createElement("img");
     const cardImageLivePreview = document.createElement("img");
-    const cardTitle = document.createElement("h1");
+    const cardTitle = document.createElement("h2");
     const cardDescription = document.createElement("p");
 
     const linkContainer = document.createElement("div");
@@ -88,7 +138,9 @@ for (let i = 0; i < cards.length; i++) {
 
     cardImageThumbnail.classList.add("card-thumbnail");
     cardImageSourceCode.classList.add("card-icon");
+    cardImageSourceCode.setAttribute("title", "Source code");
     cardImageLivePreview.classList.add("card-icon");
+    cardImageLivePreview.setAttribute("title", "Live preview");
 
     cardElement.appendChild(cardImageThumbnail);
     cardElement.appendChild(cardTitle);
@@ -104,16 +156,16 @@ for (let i = 0; i < cards.length; i++) {
 
 const footer = document.getElementsByTagName("footer")[0];
 footer.innerHTML = "";
-const footerDetailWrapper = document.createElement("div");
+const footerDetailWrapper = document.createElement("address");
 
 const footerTitle = document.createElement("h1");
 const footerParagraph = document.createElement("p");
 const footerPhoneContainer = document.createElement("div");
 const footerTelephoneImg = document.createElement("img");
-const footerTelephoneText = document.createElement("p");
+const footerTelephoneText = document.createElement("h2");
 const footerEmailContainer = document.createElement("div");
 const footerEmailImg = document.createElement("img");
-const footerEmailText = document.createElement("p");
+const footerEmailText = document.createElement("h2");
 const footerMainImg = document.createElement("img");
 const footerLinksContainer = headerLinksContainer.cloneNode(true);
 footerLinksContainer.setAttribute("class", ""); // remove classes that were set while setting up header links
@@ -158,5 +210,4 @@ const linkToIcons = document.createElement("a");
 credits.innerHTML = "";
 linkToIcons.href = "https://www.flaticon.com";
 linkToIcons.innerHTML = "Icons from Flaticon";
-// footerCredits.innerHTML = "https://www.flaticon.com";
 credits.appendChild(linkToIcons);
