@@ -1,14 +1,12 @@
 import cards from "./DB_content";
 import "./resetcss.css";
 import "./animations.css";
-import "./darkAndLightThemes.css";
 import "./styles.css";
 import img_noimage from "./img/no-image-icon-23494.png";
 import icon_github from "./img/icon_github.svg";
 import icon_linkedin from "./img/icon_linkedin.svg";
 import icon_email from "./img/icon_envelope.svg";
 import icon_phone from "./img/icon_phone-flip.svg";
-// import icon_share from "./img/icon_share-square-thin.svg";
 import icon_liveWeb from "./img/icon-site-browser.svg";
 
 const svg_theme = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -121,8 +119,8 @@ cardContainer.classList.add("card");
 for (let i = 0; i < cards.length; i++) {
     const cardData = cards[i];
     const cardElement = cardContainer.cloneNode();
-    const cardImageThumbnail = document.createElement("img");
     const cardImageSourceCode = document.createElement("img");
+    let cardImageThumbnail;
     const cardImageLivePreview = document.createElement("img");
     const cardTitle = document.createElement("h2");
     const cardDescription = document.createElement("p");
@@ -130,13 +128,25 @@ for (let i = 0; i < cards.length; i++) {
     const linkContainer = document.createElement("div");
     linkContainer.classList.add("card-container-icons");
 
-    cardImageThumbnail.src = cardData.imgsrc;
     cardImageSourceCode.src = icon_github;
     cardImageLivePreview.src = icon_liveWeb;
     cardTitle.innerHTML = cardData.title;
     cardDescription.innerHTML = cardData.desc;
 
-    cardImageThumbnail.classList.add("card-thumbnail");
+    if (cardData.imgsrc === img_noimage) {
+        const cardColourIndex = Math.floor(Math.random() * 5);
+        cardImageThumbnail = document.createElement("div");
+        cardImageThumbnail.classList.add("card-thumbnail");
+        cardImageThumbnail.style.setProperty(
+            "--card-random-color",
+            `var(--random-color-${cardColourIndex})`
+        );
+        cardImageThumbnail.style.height = "200px";
+    } else {
+        cardImageThumbnail = document.createElement("img");
+        cardImageThumbnail.classList.add("card-thumbnail");
+        cardImageThumbnail.src = cardData.imgsrc;
+    }
     cardImageSourceCode.classList.add("card-icon");
     cardImageSourceCode.setAttribute("title", "Source code");
     cardImageLivePreview.classList.add("card-icon");

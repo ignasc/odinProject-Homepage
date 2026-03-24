@@ -8,6 +8,7 @@
 
 /* https://angel-rs.github.io/css-color-filter-generator/ */
 /* For generating filter values for svg */
+@import "./darkAndLightThemes.css";
 
 :root {
     --wrapper-width: 42rem;
@@ -30,6 +31,12 @@
 }
 
 body.dark {
+    --random-color-0: oklch(0.3066 0.07031 20);
+    --random-color-1: oklch(0.3 0.0603 90);
+    --random-color-2: oklch(0.2981 0.0518 181);
+    --random-color-3: oklch(0.2988 0.0703 250);
+    --random-color-4: oklch(0.3086 0.0703 320);
+
     --svg-filter: brightness(0) saturate(100%) invert(94%) sepia(7%)
         saturate(153%) hue-rotate(173deg) brightness(97%) contrast(88%);
     --svg-filter-hover: brightness(0) saturate(100%) invert(57%) sepia(18%)
@@ -45,6 +52,12 @@ body.dark {
 }
 
 body.light {
+    --random-color-0: oklch(0.9617 0.01875 20);
+    --random-color-1: oklch(0.9641 0.01875 90);
+    --random-color-2: oklch(0.9619 0.01875 180);
+    --random-color-3: oklch(0.9539 0.01875 250);
+    --random-color-4: oklch(0.9668 0.01875 320);
+
     --svg-filter: brightness(0) saturate(100%) invert(59%) sepia(0%)
         saturate(0%) hue-rotate(159deg) brightness(86%) contrast(85%);
     --svg-filter-hover: brightness(0) saturate(100%) invert(13%) sepia(11%)
@@ -335,7 +348,8 @@ footer {
 .card-thumbnail {
     grid-column: 1 / -1;
     width: 100%;
-    background-color: var(--bg-light);
+    /* background-color: var(--bg-light); */
+    background-color: var(--card-random-color);
 }
 
 .card > h2 {
@@ -385,9 +399,6 @@ footer {
     align-items: center;
 }
 
-.footer-detail-wrapper {
-}
-
 .footer-detail-wrapper > h1 {
     color: var(--text);
 }
@@ -398,9 +409,6 @@ footer {
 
 .footer-detail-wrapper > * {
     padding: 0.5rem;
-}
-
-.footer-item {
 }
 
 .footer-phone-container {
