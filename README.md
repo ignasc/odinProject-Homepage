@@ -2,6 +2,8 @@
 
 This is the webpage template that will be built as part of the assignment.
 
+Live preview: [link](https://ignasc.github.io/odinProject-Homepage/)
+
 ## Webpack template
 
 A generic webpack template for html, css and javascript. This is the template that I will be using for my personal projects and will update it as needed.
